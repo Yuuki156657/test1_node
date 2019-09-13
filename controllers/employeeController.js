@@ -10,12 +10,12 @@ router.get('/', (req, res) => {
 });
 
 
-// router.post('/', (req, res) => {
-//     if (req.body._id == '')
-//         insertRecord(req, res);
-//         else
-//         updateRecord(req, res);
-// });
+router.post('/', (req, res) => {
+    // if (req.body._id == '')
+        insertRecord(req, res);
+        // else
+        // updateRecord(req, res);
+});
 
 mongoose.set('useFindAndModify', false);
 
@@ -43,12 +43,12 @@ function insertRecord(req, res) {
     });
 }
 
-router.put('/', (req, res) => {
-    // if (req.body._id == '')
-    //     insertRecord(req, res);
-    //     else
-        updateRecord(req, res);
-});
+// router.put('/', (req, res) => {
+//     // if (req.body._id == '')
+//     //     insertRecord(req, res);
+//     //     else
+//         updateRecord(req, res);
+// });
 
 function updateRecord(req, res) {
     Employee.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, doc) => {
