@@ -11,10 +11,10 @@ router.get('/', (req, res) => {
 
 
 router.post('/', (req, res) => {
-    // if (req.body._id == '')
+    if (req.body._id == '')
         insertRecord(req, res);
-    //     else
-        // updateRecord(req, res);
+        else
+        updateRecord(req, res);
 });
 
 mongoose.set('useFindAndModify', false);
